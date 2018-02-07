@@ -175,7 +175,7 @@ func (r *Router) Handle(w io.Writer, req *Request) {
 		} else {
 			ReplyWithError(w, req.Id, CodeInternalError, err.Error())
 		}
+	} else {
+		Reply(w, req.Id, result)
 	}
-
-	Reply(w, req.Id, result)
 }
